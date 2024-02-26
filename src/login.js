@@ -39,7 +39,7 @@ function LoginForm(props) {
 
   function handle() {
     console.log('Sending login request...');
-    fetch('${process.env.REACT_APP_BACKEND_URL}/account/login', {
+    fetch('/account/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, password: password }),

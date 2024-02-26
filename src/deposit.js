@@ -77,7 +77,7 @@ function DepositForm({ setShow, setStatus, setVariant, submitted, setSubmitted }
     }
 
     // API call to perform the deposit action
-    fetch('${process.env.REACT_APP_BACKEND_URL}/account/deposit', { 
+    fetch('/account/deposit', { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
