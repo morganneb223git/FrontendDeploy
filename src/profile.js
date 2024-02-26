@@ -18,7 +18,7 @@ const UserProfile = () => {
     const fetchUserData = async () => {
       console.log('Fetching user data...');
       try {
-        const response = await fetch(`account/profile?email=${user.email}`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/account/profile?email=${user.email}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -56,7 +56,7 @@ const UserProfile = () => {
   const handleUpdateProfile = async () => {
     try {
       // Send the updated user data from the state directly
-      const response = await fetch('account/update-profile', {
+      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/account/update-profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

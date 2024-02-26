@@ -13,7 +13,7 @@ function Balance() {
     setStatus(''); // Clear previous status
     setError(''); // Clear previous errors
     console.log(`Fetching balance for email: ${email}`);
-    fetch(`/account/balance/${email}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/account/balance/${email}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
