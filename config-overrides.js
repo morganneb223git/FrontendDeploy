@@ -1,8 +1,8 @@
 // config-overrides.js
-const { override, addWebpackDevServer } = require('customize-cra');
+const { override, addDevServer } = require('customize-cra');
 
 module.exports = override(
-  addWebpackDevServer(config => {
+  addDevServer(config => {
     config.setupMiddlewares = config.setupMiddlewares || config.before; // Update the deprecated options
     delete config.before; // Remove the deprecated option
     delete config.after; // Remove the deprecated option
